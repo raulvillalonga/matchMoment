@@ -4,4 +4,9 @@ class SiteController < ApplicationController
     render 'home'
   end
 
+  def match
+    @usuarios = params[:usuarios]        
+    render 'match'
+  end
+
 end
