@@ -6,9 +6,9 @@
 footer{
   background-color: #3F6E98;
   color: white;
-  position: fixed;
+  //position: fixed;
   height: 40px;
-  bottom: 0;
+  //bottom: 0;
   width: 1170px;
   border-style: solid;
   border-color: #D3EAFF;
@@ -35,7 +35,7 @@ header{
   background-color: #D3EAFF; 
   border-style: solid;
   border-color: #76B0E4;
-  height: 451px;
+  height: auto;
   border-width: 4px 0px 2px 0px;
   color: #3F6E98;
 }
@@ -49,4 +49,13 @@ header{
   float: left;
   text-align: center;
   font-size: 40px;
+  width: 240px;
+  height: 160px;
 }
+
+#map {
+  margin-left: 40px;
+  height: 75vh;
+  width: 90%;
+}
+

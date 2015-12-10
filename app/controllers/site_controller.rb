@@ -1,7 +1,6 @@
 class SiteController < ApplicationController
 
   def validate
-    session[:access_token] = nil
     if session[:access_token] == nil      
       url = InstagramApi.get_url()
       redirect_to url
@@ -18,7 +17,7 @@ class SiteController < ApplicationController
   end
 
   def match
-    @usuarios = InstagramApi.load_header(params[:usuarios], session[:access_token])
+    @usuarios = InstagramApi.load_header_users(params[:usuarios], session[:access_token])
     render 'match'
   end
 end

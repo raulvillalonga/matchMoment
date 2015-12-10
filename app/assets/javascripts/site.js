@@ -16,7 +16,17 @@
     numero += 1;
   });
 
+  $(document).on("click", ".js-pintar",function(event){
 
+    event.preventDefault();
+    var arr = [{lat: 40.4288712,lng: -3.70087},
+               {lat: 40.429400853,lng: -3.70225602},
+               {lat: 40.429490859,lng: -3.70229609},
+               {lat: 40.4277802,lng: -3.7102399}];
+
+    arrMarkers(arr);
+  });
 
 
 })();
+

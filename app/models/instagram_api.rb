@@ -19,20 +19,21 @@ class InstagramApi
     response.access_token    
   end
 
-
-  def self.load_header(usuarios, access_token)
-
+  def self.load_header_users(usuarios, access_token)
     client = Instagram.client(:access_token => access_token)
-
-    html1 = "<div class='row'><div class='col-md-12'>"
+    hash_usuarios = []
 
     usuarios.each do |usu| 
+      photo_insta = nil
       for user in client.user_search(usu[1])
-        html1 += "<div class='usu-name'> #{user.username}<br><img src='#{user.profile_picture}' height='100px'></div>"
+        if user.username == usu[1]
+          photo_insta = user.profile_picture
+        end  
       end
+      hash_usuarios << { usuario: usu[1], photo: photo_insta }          
     end 
-    html1 += "</div></div>"
-    
+    return hash_usuarios
   end
+
 
 end

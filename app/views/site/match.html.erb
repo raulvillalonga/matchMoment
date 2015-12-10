@@ -1,3 +1,27 @@
+<%= javascript_include_tag 'site' %>
+<%= javascript_include_tag 'geolocation' %>
 <h2>Comparando los usuarios: </h2>
 
-<%= @usuarios.html_safe%>
+
+<div class='row'>
+  <div class='col-md-12'>
+
+    <% @usuarios.each do |usu| %>
+      <% if (usu[:photo] != nil) %>
+        <div class='usu-name'><%= usu[:usuario] %><br><img src='<%= usu[:photo] %>' height='100px'></div>
+      <% else %>
+        <div class='usu-name'>El usuario <%= usu[:usuario] %> no existe.</div>
+      <% end %>
+    <% end %>
+
+  </div>
+</div>
+
+<div class='row'>
+<a href="/" class="js-pintar">Pintarrrrr</a>
+</div>
+
+<div class='row row-map'>
+    <div id="map"></div>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
