@@ -18,13 +18,11 @@ class SiteController < ApplicationController
 
   def match
 
+    
+
     @usuarios = InstagramApi.load_header_users(params[:usuarios], session[:access_token])
 
-    #BUSCAR USUARIO: ESTA EN BASE DE DATOS SINO BUSCAR DE INTERNET
-    #CARGAR FOTOS DEL PRIMER USUARIO
-    #COMPARA LA PRIMERA CON LOS OTROS USUARIOS
-    #GUARDAR CONCIDENCIA# SI HAY COINCIDENCIAS EN ARRAY
-    
+
 
     puts esta_cerca([46.3625, 15.114444],[46.055556, 14.508333], 500000)
     

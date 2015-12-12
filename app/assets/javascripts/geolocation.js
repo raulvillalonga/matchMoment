@@ -20,7 +20,7 @@ function onError(err){
 function createMap(position){
   var mapOptions = {
     center: position,
-    zoom: 17
+    zoom: 14
   };
   map = new google.maps.Map($('#map')[0], mapOptions);
   //createMarker(position);
@@ -38,16 +38,10 @@ function createMarker(position) {
 function createMarkerPlus(data) {
 var image = {
     url: data['url'],
-    // This marker is 20 pixels wide by 32 pixels high.
     size: new google.maps.Size(50, 50),
-    // The origin for this image is (0, 0).
     origin: new google.maps.Point(0, 0),
-    // The anchor for this image is the base of the flagpole at (0, 32).
     anchor: new google.maps.Point(50, 50)
   };
-  // Shapes define the clickable region of the icon. The type defines an HTML
-  // <area> element 'poly' which traces out a polygon as a series of X,Y points.
-  // The final coordinate closes the poly by connecting to the first coordinate.
   var shape = {
     coords: [1, 1, 1, 50, 50, 50, 50, 1],
     type: 'poly'
@@ -58,7 +52,7 @@ var image = {
       map: map,
       icon: image,
       shape: shape,
-      title: 'TEXTO'
+      title: data['usu']
     });
   
 }
