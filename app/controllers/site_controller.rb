@@ -18,13 +18,9 @@ class SiteController < ApplicationController
 
   def match
 
-    
+    @usuarios = LoadDatum.get_header_data_users(params[:usuarios], session[:access_token])
 
-    @usuarios = InstagramApi.load_header_users(params[:usuarios], session[:access_token])
-
-
-
-    puts esta_cerca([46.3625, 15.114444],[46.055556, 14.508333], 500000)
+    #puts esta_cerca([46.3625, 15.114444],[46.055556, 14.508333], 500000)
     
     render 'match'
   end

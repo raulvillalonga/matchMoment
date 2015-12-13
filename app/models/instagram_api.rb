@@ -36,4 +36,21 @@ class InstagramApi
   end
 
 
+  def self.user_exists?(username, access_token)
+    client = Instagram.client(:access_token => access_token)
+    data = client.user_search(username)
+    if (data.length == 0)
+      return false
+    else
+      username == data[0].username
+    end
+  end
+
+  def self.get_user(username, access_token)
+    client = Instagram.client(:access_token => access_token)
+    data = client.user_search(username)
+    data[0]    
+  end
+
+
 end

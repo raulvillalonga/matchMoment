@@ -8,10 +8,11 @@
   <div class='col-md-12'>
 
     <% @usuarios.each do |usu| %>
-      <% if (usu[:photo] != nil) %>
-        <div class='usu-name'><%= usu[:usuario] %><br><img src='<%= usu[:photo] %>' height='100px'></div>
+      <% if (usu[:id] != nil) %>
+      <%binding.pry%>
+        <div class='usu-name'><%= usu[:username] %><br><img src='<%= usu[:profilepicture] %>' height='100px'></div>
       <% else %>
-        <div class='usu-name'>El usuario <%= usu[:usuario] %> no existe.</div>
+        <div class='usu-name'>El usuario <%= usu[:username] %> no existe.</div>
       <% end %>
     <% end %>
 
