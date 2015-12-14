@@ -52,5 +52,41 @@ class InstagramApi
     data[0]    
   end
 
+  def self.last_media(username, access_token)
+    client = Instagram.client(:access_token => access_token)
+    data = client.user_search(username)
+    ultima = client.user_recent_media(data[0].id, count: 1)
+    ultima[0].id    
+  end
+
+  def self.get_media_by_user(username, last_id, access_token)
+    arr_media = []
+    ini_id = 0
+    abandonar = false
+
+    client = Instagram.client(:access_token => access_token)
+    data = client.user_search(username)
+
+    while (abandonar == false)
+      if (ini_id == 0)
+        media = client.user_recent_media(data[0].id, {count: 10})      
+      else      
+        media = client.user_recent_media(data[0].id, {count: 10, :max_id => ini_id})
+      end
+      if (media.length == 0)
+        abandonar = true
+      else
+        media.each do |medium|
+          if ((medium.id != last_id)||(abandonar == false))
+            arr_media << medium
+            ini_id = medium.id
+          else
+            abandonar = true
+          end
+        end
+      end
+    end
+    arr_media.reverse
+  end
 
 end

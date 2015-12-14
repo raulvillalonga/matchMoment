@@ -18,7 +18,7 @@ module Location
       rm * c 
   end
 
-  def esta_cerca(loc1, loc2, distancia)
+  def esta_cerca?(loc1, loc2, distancia)
     calcular_distancia(loc1, loc2) <= distancia    
   end
 
