@@ -9,6 +9,9 @@
 
     <% @usuarios.each do |usu| %>
       <% if (usu[:id] != nil) %>
+      <div class="oculto">        
+        <p class="users_shown"><%= usu[:id] %></p>
+      </div>
         <div class='usu-name'><%= usu[:username] %><br><a href='<%= usu[:website] %>' target="_blank"><img src='<%= usu[:profilepicture] %>' height='100px'></a></div>
       <% else %>
         <div class='usu-name'>El usuario <%= usu[:username] %> no existe.</div>

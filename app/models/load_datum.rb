@@ -95,13 +95,13 @@ class LoadDatum
     userData[0].media.create(id_medium_ins: medium[:id], 
                              created_time: Time.at(medium[:created_time].to_i), 
                              link: medium[:link], 
-                             low_resolution: medium[:images][:low_resolution][:url], 
-                             mediu_resolution: medium[:images][:thumbnail][:url], 
+                             mediu_resolution: medium[:images][:low_resolution][:url], 
+                             low_resolution: medium[:images][:thumbnail][:url], 
                              high_resolution: medium[:images][:standard_resolution][:url], 
                              latitude: lo_la, 
                              longitude: lo_lo, 
                              name_location: lo_na, 
                              id_location: lo_id)    
   end
-  
+
 end
