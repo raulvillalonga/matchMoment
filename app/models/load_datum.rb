@@ -52,7 +52,7 @@ class LoadDatum
 
   def self.save_media(users, session)
     users.each do |usu|    
-      if (usu.id != nil)
+      if (usu[:id_instagram] != nil)
         if (InstagramApi.last_media(usu[:username], session) != last_media_saved(usu[:username]))
           save_media_data(usu[:username], last_media_saved(usu[:username]), session)
         end
@@ -80,28 +80,28 @@ class LoadDatum
 
   def self.save_medium(user, medium)
     userData = User.where(username: user)
-    if (medium.location == nil)
+    if (medium[:location] == nil)
       lo_la = nil
       lo_lo = nil
       lo_na = nil
       lo_id = nil      
     else
-      lo_la = medium.location.latitude.to_f
-      lo_lo = medium.location.longitude.to_f
-      lo_na = medium.location.name
-      lo_id = medium.location.id
+      lo_la = medium[:location][:latitude].to_f
+      lo_lo = medium[:location][:longitude].to_f
+      lo_na = medium[:location][:name]
+      lo_id = medium[:location][:id]
     end
 
-    userData[0].media.create(id_medium_ins: medium.id, 
-                             created_time: Time.at(medium.created_time.to_i), 
-                             link: medium.link, 
-                             low_resolution: medium.images.low_resolution.url, 
-                             mediu_resolution: medium.images.thumbnail.url, 
-                             high_resolution: medium.images.standard_resolution.url, 
+    userData[0].media.create(id_medium_ins: medium[:id], 
+                             created_time: Time.at(medium[:created_time].to_i), 
+                             link: medium[:link], 
+                             low_resolution: medium[:images][:low_resolution][:url], 
+                             mediu_resolution: medium[:images][:thumbnail][:url], 
+                             high_resolution: medium[:images][:standard_resolution][:url], 
                              latitude: lo_la, 
                              longitude: lo_lo, 
                              name_location: lo_na, 
                              id_location: lo_id)    
   end
-
+  
 end

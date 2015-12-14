@@ -63,9 +63,7 @@
     event.preventDefault();
 
       var user_id = 1;      
-      ajax.execute('/api/user/' + user_id, getData);
-
-
+      ajax.execute('/api/media/' + user_id, getData);
 
   });
 })();

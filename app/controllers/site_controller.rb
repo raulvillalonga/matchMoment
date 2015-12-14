@@ -31,7 +31,9 @@ class SiteController < ApplicationController
     render status:200,json:data
   end
 
-  def dataMedia
-
+  def mediaData
+    data = User.find_by_id(params[:id])
+    media = data.media.all 
+    render status:200,json:media
   end  
 end
