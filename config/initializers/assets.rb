@@ -12,3 +12,4 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( site.js )
 Rails.application.config.assets.precompile += %w( geolocation.js )
 Rails.application.config.assets.precompile += %w( ajax.js )
+Rails.application.config.assets.precompile += %w( match.js )

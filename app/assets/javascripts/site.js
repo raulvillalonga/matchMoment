@@ -33,7 +33,9 @@
   $(document).on("click", ".js-drawMatchMarkers",function(event){
     event.preventDefault();
     deleteMarkers();
-    //arrMarkers(arr_todo);
+    var arr_match = getArrMatch(arr_todo, 500);
+    console.log(arr_match);
+    arrMarkersMatch(arr_match);
   });
 
   function getData(UserData){

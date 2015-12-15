@@ -66,7 +66,6 @@ var image = {
     var marker = new google.maps.Marker({
       position: pos,
       map: map,
-      //icon: getCircle(30),
       icon: image,
       shape: shape
     });
@@ -167,6 +166,18 @@ function arrMarkers(arr) {
     arr2.forEach(function(data){
       createMarkerPlus(data);    
     });
+  });
+
+}
+
+function arrMarkersMatch(arr) {
+
+  arr.forEach(function(arr2){ 
+    if (arr2.length > 1) {
+      arr2.forEach(function(data){
+        createMarkerPlus(data[0]);    
+      });
+    }; 
   });
 
 }

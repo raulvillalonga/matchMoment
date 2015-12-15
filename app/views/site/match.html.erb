@@ -1,4 +1,5 @@
 <%= javascript_include_tag 'ajax' %>
+<%= javascript_include_tag 'match' %>
 <%= javascript_include_tag 'site' %>
 <%= javascript_include_tag 'geolocation' %>
 <h2>Comparando los usuarios: </h2>
@@ -12,7 +13,7 @@
       <div class="oculto">        
         <p class="users_shown"><%= usu[:id] %></p>
       </div>
-        <div class='usu-name'><%= usu[:username] %><br><a href='<%= usu[:website] %>' target="_blank"><img src='<%= usu[:profilepicture] %>' height='100px'></a></div>
+        <div class='usu-name'><%= usu[:username] %><br><a href='<%= usu[:website] %>' target="_blank"><div class="redondo"><img src='<%= usu[:profilepicture] %>' height='100px'></div></a></div>
       <% else %>
         <div class='usu-name'>El usuario <%= usu[:username] %> no existe.</div>
       <% end %>
@@ -47,7 +48,4 @@
     <div id="map"></div>
 </div>
 
-<div class='row row-map'>
-    <div id="map2"></div>
-</div>
 <script src="https://maps.googleapis.com/maps/api/js"></script>
