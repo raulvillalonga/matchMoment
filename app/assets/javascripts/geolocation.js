@@ -1,4 +1,5 @@
 var map;
+var markers = [];
 
 if ("geolocation" in navigator){
   navigator.geolocation.getCurrentPosition(onLocation, onError);
@@ -14,7 +15,7 @@ function onLocation(position){
 }
 
 function onError(err){
-  console.log("What are you using, IE 7??", err);
+  console.log("Error: Google Maps no soporta IE 7??", err);
 }
 
 function createMap(position){
@@ -22,14 +23,15 @@ function createMap(position){
     center: position,
     zoom: 14
   };
+
   map = new google.maps.Map($('#map')[0], mapOptions);
+
   //createMarker(position);
 
 }
 
 function createMarker(data) {
 
-  debugger;
     var pos = {};
     pos['lng'] = data['longitude'];
     pos['lat'] = data['latitude'];
@@ -41,7 +43,9 @@ function createMarker(data) {
 }
 
 function createMarkerPlus(data) {
-  debugger;
+
+  if (data['longitude'] != null) {
+
 var pos = {};
 pos['lng'] = data['longitude'];
 pos['lat'] = data['latitude'];
@@ -50,22 +54,102 @@ var size_px = 50;
 var url_size = convert_url(data['low_resolution'], size_px); 
 var image = {
     url: url_size,
-    size: new google.maps.Size(50, 50),
+    size: new google.maps.Size(size_px, size_px),
     origin: new google.maps.Point(0, 0),
-    anchor: new google.maps.Point(50, 50)
+    anchor: new google.maps.Point(25, 25)
   };
   var shape = {
-    coords: [1, 1, 1, 50, 50, 50, 50, 1],
+    coords: [1, 1, 1, size_px, size_px, size_px, size_px, 1],
     type: 'poly'
   };
 
     var marker = new google.maps.Marker({
       position: pos,
       map: map,
+      //icon: getCircle(30),
       icon: image,
       shape: shape
     });
-  
+
+  markers.push(marker);
+};
+}
+
+function createCircles(data, id_user) {
+
+  if (data['longitude'] != null) {
+    var pos = {};
+    pos['lng'] = data['longitude'];
+    pos['lat'] = data['latitude'];
+
+    var color = "";
+
+    if (id_user < 9) {
+      id_user = id_user % 10;
+    };
+
+    switch (id_user) {
+      case 1:
+        color = "red";
+        break;
+      case 2:
+        color = "blue";
+        break;
+      case 3:
+        color = "orange";
+        break;
+      case 4:
+        color = "green";
+        break;
+      case 5:
+        color = "yellow";
+        break;
+      case 6:
+        color = "indigo";
+        break;
+      case 7:
+        color = "fuchsia";
+        break;
+      case 8:
+        color = "maroon";
+        break;
+      case 9:
+        color = "gray";
+        break;
+      case 0:
+        color = "black";
+        break;
+    }
+
+
+      var shape = {
+        coords: [1, 1, 1, 50, 50, 50, 50, 1],
+        type: 'poly'
+      };
+
+      var marker = new google.maps.Marker({
+        position: pos,
+        map: map,
+        icon: getCircle(30, color),
+        shape: shape
+      });   
+
+  markers.push(marker);
+
+  };
+
+}
+
+function getCircle(magnitude,color) {
+  var circle = {
+    path: google.maps.SymbolPath.CIRCLE,
+    fillColor: color,
+    fillOpacity: .2,
+    strokeColor: 'white',
+    strokeWeight: .5,
+    scale: magnitude
+  };
+  return circle;
 }
 
 function convert_url(url, size) {
@@ -78,12 +162,39 @@ function convert_url(url, size) {
 }
 
 function arrMarkers(arr) {
+
   arr.forEach(function(arr2){  
     arr2.forEach(function(data){
-      debugger;
       createMarkerPlus(data);    
-       // createMarker(data);
     });
   });
 
+}
+
+function arrCircles(arr) {
+  var id_user = 1;
+  arr.forEach(function(arr2){  
+    arr2.forEach(function(data){
+      createCircles(data, id_user);    
+    });
+    id_user++;
+  });
+}
+
+function setMapOnAll(map) {
+  for (var i = 0; i < markers.length; i++) {
+    markers[i].setMap(map);
+  }
+}
+
+// Removes the markers from the map, but keeps them in the array.
+function clearMarkers() {
+  setMapOnAll(null);
+}
+
+
+// Deletes all markers in the array by removing references to them.
+function deleteMarkers() {
+  clearMarkers();
+  markers = [];
 }

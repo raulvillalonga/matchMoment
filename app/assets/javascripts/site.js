@@ -18,11 +18,23 @@
     numero += 1;
   });
 
-  $(document).on("click", ".js-pintar",function(event){
+  $(document).on("click", ".js-drawCircles",function(event){
     event.preventDefault();
+    deleteMarkers();
+    arrCircles(arr_todo);
+  });
+
+  $(document).on("click", ".js-drawAllMarkers",function(event){
+    event.preventDefault();
+    deleteMarkers();
     arrMarkers(arr_todo);
   });
 
+  $(document).on("click", ".js-drawMatchMarkers",function(event){
+    event.preventDefault();
+    deleteMarkers();
+    //arrMarkers(arr_todo);
+  });
 
   function getData(UserData){
     arr_todo.push(UserData);
@@ -32,14 +44,15 @@
   $(document).on("click", ".js-ajax",function(event){
     event.preventDefault();
 
-    var arr_principal = [];
-    var arr_secundario = [];
     var users_shown = $('.users_shown');
 
     if (users_shown.length > 0) {
-      for (var i = 0; i < users_shown.length; i++) {
-        ajax.execute('/api/media/' + users_shown[i].innerHTML, getData);
-      }        
+      ajax.execute('/api/media/' + users_shown[0].innerHTML, getData);
+      if (users_shown.length > 1) {
+        for (var i = 1; i < users_shown.length; i++) {
+          ajax.execute('/api/media/' + users_shown[i].innerHTML, getData);
+        }
+      }
     }    
   });
 
