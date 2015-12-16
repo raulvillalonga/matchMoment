@@ -33,7 +33,6 @@
                 arr_obj = [arr[n][m], distance(arr[n][m]['latitude'],arr[n][m]['longitude'],arr[0][i]['latitude'],arr[0][i]['longitude'])]
                 if (arr_obj[1] < radio) {
                   if (arr_obj[1] < 5) {
-                    debugger;
                     arr_obj[0]['longitude'] = arr_obj[0]['longitude'] + 0.0002
                     arr_obj[1] = 2;                      
                   };

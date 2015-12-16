@@ -70,6 +70,12 @@ var image = {
       shape: shape
     });
 
+    marker.addListener('click', function() {
+      document.getElementById('js-medium-img').src = data['high_resolution'];
+      $(".js-user-name").text(data['latitude']);
+      $(".js-medium-modal").modal("show");
+    });
+
   markers.push(marker);
 };
 }
@@ -133,11 +139,17 @@ function createCircles(data, id_user) {
         shape: shape
       });   
 
+
+  marker.addListener('click', function() {
+    document.getElementById('js-medium-img').src = data['high_resolution'];
+    $(".js-user-name").text(data['latitude']);
+    $(".js-medium-modal").modal("show");
+  });
+
   markers.push(marker);
-
   };
-
 }
+
 
 function getCircle(magnitude,color) {
   var circle = {
