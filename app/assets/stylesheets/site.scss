@@ -12,7 +12,7 @@ footer{
   height: 40px;
   //bottom: 0;
   border-style: solid;
-  border-color: #D3EAFF;
+  border-color: #F7FBFF;
   border-width: 4px 0px 0px 0px;
   text-align: center;
   padding-top: 8px;
@@ -28,12 +28,12 @@ header{
   padding-top: 30px;
 
   border-style: solid;
-  border-color: #D3EAFF;
+  border-color: #F7FBFF;
   border-width: 0px 0px 2px 0px;
 }
 
 .cuerpo{
-  background-color: #D3EAFF; 
+  background-color: #F7FBFF; 
   border-style: solid;
   border-color: #76B0E4;
   min-height: calc(100% - 170px);
@@ -85,14 +85,14 @@ border: 1px solid #c5c5c5;
   border: 1px solid #c5c5c5;
   padding-bottom: 77px;
   padding-top: 15px;
+  background-color: #FEFEFE;
 
 }
 
 
 .links{
-  height: 60px;
+  height: auto;
   margin-top: 10px;
-  margin-bottom: 10px;
   font-size: 24px;
 }
 
@@ -102,7 +102,7 @@ text-align: center;
 border: 0;
 color: #3F6EAB;
 font-weight: bold;
-background-color: #D3EAFF;
+background-color: #FEFEFE;
 }
 
 #js-radio-box1{  
@@ -123,12 +123,19 @@ width: 33px;
 }
 
 .boton{
-  background-color: #76B0E4;
+  background-color: #3F6E98;
   text-align: center;
   border: 1px solid #c5c5c5;
-  margin-left: 5px;
-  margin-right: 5px;
-  border-radius: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.boton:hover{
+  background-color: #c5c5c5;
+  text-align: center;
+  border: 1px solid #3F6E98;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 #slider1{
@@ -142,4 +149,10 @@ width: 33px;
 .one-slide{
   padding-left: 50px;
   padding-right: 50px
+}
+
+.titulo{
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
