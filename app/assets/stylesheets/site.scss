@@ -1,7 +1,9 @@
 // Place all the styles related to the site controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+body,html {
+  height: 100%
+}
 
 footer{
   background-color: #3F6E98;
@@ -9,7 +11,6 @@ footer{
   //position: fixed;
   height: 40px;
   //bottom: 0;
-  width: 1170px;
   border-style: solid;
   border-color: #D3EAFF;
   border-width: 4px 0px 0px 0px;
@@ -35,7 +36,7 @@ header{
   background-color: #D3EAFF; 
   border-style: solid;
   border-color: #76B0E4;
-  height: auto;
+  min-height: calc(100% - 170px);
   border-width: 4px 0px 2px 0px;
   color: #3F6E98;
 }
@@ -45,18 +46,17 @@ header{
 }
 
 .usu-name{
-  margin-right: 40px;
+  margin:0px, 40px, 0px, 40px;
   float: left;
   text-align: center;
-  font-size: 40px;
+  font-size: 24px;
   width: 240px;
   height: 160px;
 }
 
 #map {
-  margin-left: 40px;
   height: 75vh;
-  width: 90%;
+  width: 100%;
 }
 
 
@@ -70,5 +70,76 @@ header{
 }
 
 .redondo{
-  border-radius: 915px;
+  border: 2px solid #3F6E98;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.row-map{
+  margin: 0, auto;
+border: 1px solid #c5c5c5;
+}
+
+.slides{
+  height: 60px;
+  border: 1px solid #c5c5c5;
+  padding-bottom: 77px;
+  padding-top: 15px;
+
+}
+
+
+.links{
+  height: 60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.js-radio-box{
+width: 31px;
+text-align: center;
+border: 0;
+color: #3F6EAB;
+font-weight: bold;
+background-color: #D3EAFF;
+}
+
+#js-radio-box1{  
+width: 31px;
+}
+
+#js-radio-box2{  
+width: 33px;
+}
+
+.text-slide{
+  width: 100%;
+  text-align: center;
+}
+
+.usuarios{
+  margin-left: 100px;
+}
+
+.boton{
+  background-color: #76B0E4;
+  text-align: center;
+  border: 1px solid #c5c5c5;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 7px;
+}
+
+#slider1{
+  font-size: 20px;
+}
+
+#slider2{
+  font-size: 20px;
+}
+
+.one-slide{
+  padding-left: 50px;
+  padding-right: 50px
 }

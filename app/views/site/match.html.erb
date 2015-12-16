@@ -1,3 +1,4 @@
+<%= javascript_include_tag 'jquery-ui' %>
 <%= javascript_include_tag 'ajax' %>
 <%= javascript_include_tag 'match' %>
 <%= javascript_include_tag 'site' %>
@@ -6,20 +7,68 @@
 
 
 <div class='row'>
-  <div class='col-md-12'>
-
+  <div class='col-md-12 col-usus'>
+  <div class="usuarios">
     <% @usuarios.each do |usu| %>
       <% if (usu[:id] != nil) %>
       <div class="oculto">        
         <p class="users_shown"><%= usu[:id] %></p>
       </div>
-        <div class='usu-name'><%= usu[:username] %><br><a href='<%= usu[:website] %>' target="_blank"><div class="redondo"><img src='<%= usu[:profilepicture] %>' height='100px'></div></a></div>
+        <div class='usu-name'><a href='<%= usu[:website] %>' target="_blank"><img src='<%= usu[:profilepicture] %>' class="redondo" height='100px'></a><br><%= usu[:username] %></div>
       <% else %>
         <div class='usu-name'>El usuario <%= usu[:username] %> no existe.</div>
       <% end %>
     <% end %>
-
+    </div>
   </div>
+</div>
+
+<div class='row links'>
+    <div class='col-md-2'></div>
+    <div class='col-md-2 boton'>
+      <a href="/" class="js-drawMatchMarkers">Coincidencias</a>      
+    </div>
+    <div class='col-md-2 boton'>
+      <a href="/" class="js-drawAllMarkers">Todas</a> 
+    </div>
+    <div class='col-md-2 boton'>
+      <a href="/" class="js-drawCircles">Densidad</a> 
+    </div>
+    <div class='col-md-2'></div>
+</div>
+
+<div class="row slides">
+      <div class='col-md-6 one-slide'>
+      <div class="one-slide">
+        <div class="text-slide">
+          <p>
+            <label for="js-radio-box1">Fotografias en un radio de </label>
+            <input type="text" class="js-radio-box" id="js-radio-box1" readonly>
+            <label for="js-radio-box1"> metros a la redonda. </label>
+          </p>
+        </div>
+        <div id="slider1"></div>   
+      </div> 
+      </div>
+      <div class='col-md-6'> 
+      <div class="one-slide">
+        <div class="text-slide">  
+          <p>
+            <label for="js-radio-box2">Fotografias con </label>
+            <input type="text" class="js-radio-box" id="js-radio-box2" readonly>
+            <label for="js-radio-box2"> dias de diferencia</label>            
+          </p>
+        </div>
+        <div id="slider2"></div>
+        </div>
+      </div>
+</div>
+
+
+
+
+<div class='row row-map'>
+    <div id="map"></div>
 </div>
 
 <div class='row'>
@@ -27,25 +76,38 @@
   <h2>Se cruzaron dia 28-5-14.</h2>
 </div>
 
-<div class='row'>
-    <div class='col-md-2'></div>
-    <div class='col-md-2'>
-      <a href="/" class="js-ajax">Cargar</a>      
-    </div>
-    <div class='col-md-2'>
-      <a href="/" class="js-drawMatchMarkers">Coincidencias</a>      
-    </div>
-    <div class='col-md-2'>
-      <a href="/" class="js-drawAllMarkers">Todas</a> 
-    </div>
-    <div class='col-md-2'>
-      <a href="/" class="js-drawCircles">Densidad</a> 
-    </div>
-    <div class='col-md-2'></div>
-</div>
-
-<div class='row row-map'>
-    <div id="map"></div>
-</div>
-
 <script src="https://maps.googleapis.com/maps/api/js"></script>
+
+<script>
+
+
+
+
+    $( "#slider1" ).slider({
+      range: "min",
+      min: 0,
+      max: 1000,
+      value: 1000,
+      slide: function( event, ui ) {
+        $( "#js-radio-box1" ).val( ui.value );
+        $(".js-drawMatchMarkers").click();
+      }
+    });
+
+    $( "#js-radio-box1" ).val( $( "#slider1" ).slider( "value" ) );
+
+
+    $( "#slider2" ).slider({
+    range: "min",
+      min: 0,
+      max: 9999,
+      value: 9999,
+      slide: function( event, ui ) {
+        $( "#js-radio-box2" ).val( ui.value );
+      //$(".js-drawMatchMarkers").click();
+      }
+    });
+
+    $( "#js-radio-box2" ).val( $( "#slider2" ).slider( "value" ) );  
+
+</script>

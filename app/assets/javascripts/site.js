@@ -20,31 +20,37 @@
 
   $(document).on("click", ".js-drawCircles",function(event){
     event.preventDefault();
+    $('.slides').hide();
     deleteMarkers();
     arrCircles(arr_todo);
   });
 
   $(document).on("click", ".js-drawAllMarkers",function(event){
     event.preventDefault();
+    $('.slides').hide();
     deleteMarkers();
     arrMarkers(arr_todo);
   });
 
   $(document).on("click", ".js-drawMatchMarkers",function(event){
     event.preventDefault();
-    deleteMarkers();
-    var arr_match = getArrMatch(arr_todo, 500);
-    console.log(arr_match);
-    arrMarkersMatch(arr_match);
+    $('.slides').show();
+    drawPhotoMatch();
   });
+
+  function drawPhotoMatch() {
+    deleteMarkers();
+    var arr_match = getArrMatch(arr_todo, $( "#slider1" ).slider( "value" ));
+    arrMarkersMatch(arr_match);
+  }
 
   function getData(UserData){
     arr_todo.push(UserData);
-    console.log(arr_todo);
   }
 
-  $(document).on("click", ".js-ajax",function(event){
-    event.preventDefault();
+
+function loadData() {
+ event.preventDefault();
 
     var users_shown = $('.users_shown');
 
@@ -56,8 +62,13 @@
         }
       }
     }    
-  });
+  }
 
+  $( document ).ready(function() {
+      loadData();
+      setTimeout(drawPhotoMatch, 1000);
+      
+  });
 
 
 })();

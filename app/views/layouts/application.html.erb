@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>Matchmoment</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="shortcut icon" href="/logoPeque.png">
 </head>
 <body>
+
+<header>
   <div class="container">
-    
     <div class="row">
-      <header><img src="/logo_blanco.png" height="70px"></header>
-    </div>
-    
-    <div class="row cuerpo">
-      <%= yield %>
-    </div>
-    
-    <div class="row">
-      <footer>Raul Villalonga Palliser</footer>
+      <img src="/logo_blanco.png" height="70px">
     </div>
   </div>
+</header>
+
+<section class="cuerpo">
+  <div class="container">  
+    <div class="row">
+      <%= yield %>
+    </div>
+  </div>
+</section>
+
+  <footer>
+    <div class="container">   
+      <div class="row">
+        Raul Villalonga Palliser
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
