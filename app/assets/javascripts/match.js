@@ -16,7 +16,7 @@
     return dist
   }
 
-  function getArrMatch(arr, radio) {
+  function getArrMatch(arr, radio, tiempo) {
 
     if (arr.length > 1) {
       var arr_final = [];
@@ -31,7 +31,10 @@
             for (var m = 0; m < arr[n].length; m++) {  
               if (arr[n][m]['longitude'] != null) {      
                 arr_obj = [arr[n][m], distance(arr[n][m]['latitude'],arr[n][m]['longitude'],arr[0][i]['latitude'],arr[0][i]['longitude'])]
-                if (arr_obj[1] < radio) {
+                
+                var d1 = arr[n][m]['created_time'];
+                var d2 = arr[0][i]['created_time'];
+                if ((arr_obj[1] < radio)&&(tiempo > convertToDay(d1, d2))){
                   if (arr_obj[1] < 5) {
                     arr_obj[0]['longitude'] = arr_obj[0]['longitude'] + 0.0002
                     arr_obj[1] = 2;                      
@@ -50,6 +53,22 @@
     else {
       return arr_final;
     };
-}
+  }
 
+  function convertToDay(date1, date2) {
+    debugger;
+    var days = 0;
 
+    date1 = date1.split('-');
+    date2 = date2.split('-');
+    var day1 = date1[2].split('T');
+    var day2 = date2[2].split('T');
+    var d1 = new Date(date1[0], date1[1], day1[0]);
+    var d2 = new Date(date2[0], date2[1], day2[0]);
+
+    milisec = d1 - d2;
+    days = (((milisec/1000)/60)/60)/24;
+    days = Math.abs(days);
+
+    return days;
+  }

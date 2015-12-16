@@ -46,7 +46,7 @@
 
   function drawPhotoMatch() {
     deleteMarkers();
-    var arr_match = getArrMatch(arr_todo, $( "#slider1" ).slider( "value" ));
+    var arr_match = getArrMatch(arr_todo, $( "#slider1" ).slider( "value" ), $( "#slider2" ).slider( "value" ));
     arrMarkersMatch(arr_match);
   }
 
