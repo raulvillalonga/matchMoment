@@ -69,9 +69,6 @@
       </div>
 </div>
 
-
-
-
 <div class='row row-map'>
     <div id="map"></div>
 </div>
@@ -94,7 +91,6 @@
   </ul>
 </div>
 
-
 <div class="modal fade js-medium-modal">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -112,14 +108,9 @@
   </div>
 </div>
 
-
-
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 
 <script>
-
-
-
 
     $( "#slider1" ).slider({
       range: "min",
@@ -131,21 +122,18 @@
         $(".js-drawMatchMarkers").click();
       }
     });
-
     $( "#js-radio-box1" ).val( $( "#slider1" ).slider( "value" ) );
-
 
     $( "#slider2" ).slider({
     range: "min",
       min: 0,
-      max: 9999,
-      value: 9999,
+      max: 365,
+      value: 365,
       slide: function( event, ui ) {
         $( "#js-radio-box2" ).val( ui.value );
-      //$(".js-drawMatchMarkers").click();
+        $(".js-drawMatchMarkers").click();
       }
     });
-
     $( "#js-radio-box2" ).val( $( "#slider2" ).slider( "value" ) );  
 
 </script>

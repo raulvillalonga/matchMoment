@@ -135,6 +135,7 @@ function createCircles(data, id_user) {
       var marker = new google.maps.Marker({
         position: pos,
         map: map,
+        animation: google.maps.Animation.DROP,
         icon: getCircle(30, color),
         shape: shape
       });   
@@ -210,13 +211,10 @@ function setMapOnAll(map) {
   }
 }
 
-// Removes the markers from the map, but keeps them in the array.
 function clearMarkers() {
   setMapOnAll(null);
 }
 
-
-// Deletes all markers in the array by removing references to them.
 function deleteMarkers() {
   clearMarkers();
   markers = [];
