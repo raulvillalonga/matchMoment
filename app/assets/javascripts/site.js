@@ -38,6 +38,12 @@
     drawPhotoMatch();
   });
 
+
+  $(document).on("click", ".js-submit",function(event){
+    $(".js-medium-modal").modal("show");
+  });
+  
+
   function drawPhotoMatch() {
     deleteMarkers();
     var arr_match = getArrMatch(arr_todo, $( "#slider1" ).slider( "value" ));
