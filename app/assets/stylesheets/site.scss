@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body,html {
-  height: 100%
+  height: 100%;
+  font-family: 'Varela Round', sans-serif;
 }
 
 footer{
@@ -65,19 +66,24 @@ header{
   height: 0px;
 }
 
-.row-map{
-  margin-bottom: 50px;
-}
-
 .redondo{
-  border: 6px solid #3F6E98;
+  border: 8px solid #3F6E98;
   border-radius: 50px;
   overflow: hidden;
 }
 
 .row-map{
   margin: 0, auto;
-border: 1px solid #c5c5c5;
+  border: 1px solid #c5c5c5;
+}
+
+.row-coincidencias{
+  padding-top: 30px;
+  padding-left: 40px;
+  height: auto;
+  background-color: #FEFEFE;
+  border: 1px  solid #c5c5c5;
+  padding-bottom: 30px;
 }
 
 .slides{
@@ -86,9 +92,7 @@ border: 1px solid #c5c5c5;
   padding-bottom: 77px;
   padding-top: 15px;
   background-color: #FEFEFE;
-
 }
-
 
 .links{
   height: auto;
@@ -106,11 +110,11 @@ background-color: #FEFEFE;
 }
 
 #js-radio-box1{  
-width: 31px;
+width: 36px;
 }
 
 #js-radio-box2{  
-width: 33px;
+width: 38px;
 }
 
 .text-slide{
@@ -158,14 +162,9 @@ width: 33px;
 
 .titulo{
   text-align: center;
-  margin-bottom: 30px;
-  margin-top: 30px;
-}
-
-.titulo{
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 25px;
 }
 
 .final-form{
@@ -247,4 +246,336 @@ width: 33px;
   }
 }
 
+  .js-load-modal{
+    margin-top: 120px;
+  }
 
+.js-load-modal-body{
+    margin-top: 350px;
+
+}
+
+.al{
+  margin-top: 180px;
+}
+
+
+.cssload-loader * {
+  box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.cssload-loader {
+  position: absolute;
+  left: 50%;
+  
+  width: 195px;
+  height: 195px;
+  
+  margin-top: -97px;
+  margin-left: -97px;
+  
+  perspective: 390px;
+  transform-type: preserve-3d;
+    -o-transform-type: preserve-3d;
+    -ms-transform-type: preserve-3d;
+    -webkit-transform-type: preserve-3d;
+    -moz-transform-type: preserve-3d;
+ }
+
+.cssload-square {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  
+  width: 100%;
+  height: 100%;
+  
+  perspective: 585px;
+    -o-perspective: 585px;
+    -ms-perspective: 585px;
+    -webkit-perspective: 585px;
+    -moz-perspective: 585px;
+  transform-type: preserve-3d;
+    -o-transform-type: preserve-3d;
+    -ms-transform-type: preserve-3d;
+    -webkit-transform-type: preserve-3d;
+    -moz-transform-type: preserve-3d;
+  transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+}
+
+.cssload-square--mini {
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  width: 25%;
+  height: 25%;
+  
+  margin-top: 0;
+  margin-left: 0;
+  
+  perspective: 390px;
+    -o-perspective: 390px;
+    -ms-perspective: 390px;
+    -webkit-perspective: 390px;
+    -moz-perspective: 390px;
+  transform-type: preserve-3d;
+    -o-transform-type: preserve-3d;
+    -ms-transform-type: preserve-3d;
+    -webkit-transform-type: preserve-3d;
+    -moz-transform-type: preserve-3d;
+  transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+  transform: translateZ(195px) rotateX(20deg) rotateY(-10deg);
+    -o-transform: translateZ(195px) rotateX(20deg) rotateY(-10deg);
+    -ms-transform: translateZ(195px) rotateX(20deg) rotateY(-10deg);
+    -webkit-transform: translateZ(195px) rotateX(20deg) rotateY(-10deg);
+    -moz-transform: translateZ(195px) rotateX(20deg) rotateY(-10deg);
+  
+  background-color: rgb(30,63,87);
+  
+  animation: cssload-squaremini 4.6s cubic-bezier(.38,.04,.38,.99) infinite;
+    -o-animation: cssload-squaremini 4.6s cubic-bezier(.38,.04,.38,.99) infinite;
+    -ms-animation: cssload-squaremini 4.6s cubic-bezier(.38,.04,.38,.99) infinite;
+    -webkit-animation: cssload-squaremini 4.6s cubic-bezier(.38,.04,.38,.99) infinite;
+    -moz-animation: cssload-squaremini 4.6s cubic-bezier(.38,.04,.38,.99) infinite;
+}
+
+.cssload-square--mini:nth-child(4n+2) {
+  left: 25%;
+}
+
+.cssload-square--mini:nth-child(4n+3) {
+  left: 50%;
+}
+
+.cssload-square--mini:nth-child(4n+4) {
+  left: 75%;
+}
+
+.cssload-square--mini:nth-child(5),
+.cssload-square--mini:nth-child(6),
+.cssload-square--mini:nth-child(7),
+.cssload-square--mini:nth-child(8) {
+  top: 25%;
+}
+
+.cssload-square--mini:nth-child(9),
+.cssload-square--mini:nth-child(10),
+.cssload-square--mini:nth-child(11),
+.cssload-square--mini:nth-child(12) {
+  top: 50%;
+}
+
+.cssload-square--mini:nth-child(13),
+.cssload-square--mini:nth-child(14),
+.cssload-square--mini:nth-child(15),
+.cssload-square--mini:nth-child(16) {
+  top: 75%;
+}
+
+.cssload-square--mini:nth-child(2),
+.cssload-square--mini:nth-child(5) {
+  animation-delay: 115ms;
+    -o-animation-delay: 115ms;
+    -ms-animation-delay: 115ms;
+    -webkit-animation-delay: 115ms;
+    -moz-animation-delay: 115ms;
+}
+
+.cssload-square--mini:nth-child(3),
+.cssload-square--mini:nth-child(6),
+.cssload-square--mini:nth-child(9) {
+  animation-delay: 230ms;
+    -o-animation-delay: 230ms;
+    -ms-animation-delay: 230ms;
+    -webkit-animation-delay: 230ms;
+    -moz-animation-delay: 230ms;
+}
+
+.cssload-square--mini:nth-child(4),
+.cssload-square--mini:nth-child(7),
+.cssload-square--mini:nth-child(10),
+.cssload-square--mini:nth-child(13) {
+  animation-delay: 345ms;
+    -o-animation-delay: 345ms;
+    -ms-animation-delay: 345ms;
+    -webkit-animation-delay: 345ms;
+    -moz-animation-delay: 345ms;
+}
+
+.cssload-square--mini:nth-child(8),
+.cssload-square--mini:nth-child(11),
+.cssload-square--mini:nth-child(14) {
+  animation-delay: 460ms;
+    -o-animation-delay: 460ms;
+    -ms-animation-delay: 460ms;
+    -webkit-animation-delay: 460ms;
+    -moz-animation-delay: 460ms;
+}
+
+.cssload-square--mini:nth-child(12),
+.cssload-square--mini:nth-child(15) {
+  animation-delay: 575ms;
+    -o-animation-delay: 575ms;
+    -ms-animation-delay: 575ms;
+    -webkit-animation-delay: 575ms;
+    -moz-animation-delay: 575ms;
+}
+
+.cssload-square--mini:nth-child(16) {
+  animation-delay: 690ms;
+    -o-animation-delay: 690ms;
+    -ms-animation-delay: 690ms;
+    -webkit-animation-delay: 690ms;
+    -moz-animation-delay: 690ms;
+}
+
+
+
+@keyframes cssload-squaremini {
+  0%, 100% {
+    transform: translateZ(195px) rotateX(20deg) rotateY(-10deg) rotateZ(10deg);
+    background-color: rgb(30,63,87);
+  }
+  12.5%, 62.5% {
+    transform: translateZ(0) rotateX(0) rotateY(0);
+    background-color: rgb(60,97,125);
+  }
+  25%, 75% {
+    transform: translateZ(195px) rotateX(-20deg) rotateY(10deg) rotateZ(-10deg);
+    background-color: rgb(60,97,125);
+  }
+  37.5% {
+    transform: translateZ(0) rotateX(0) rotateY(0);
+    background-color: rgb(107,178,205);
+  }
+  50% {
+    transform: translateZ(195px) rotateX(20deg) rotateY(-10deg) rotateZ(5deg);
+    background-color: rgb(107,178,205);
+  }
+  87.5% {
+    transform: translateZ(0) rotateX(0) rotateY(0);
+    background-color: rgb(30,63,87);
+  }
+}
+
+@-o-keyframes cssload-squaremini {
+  0%, 100% {
+    -o-transform: translateZ(195px) rotateX(20deg) rotateY(-10deg) rotateZ(10deg);
+    background-color: rgb(30,63,87);
+  }
+  12.5%, 62.5% {
+    -o-transform: translateZ(0) rotateX(0) rotateY(0);
+    background-color: rgb(60,97,125);
+  }
+  25%, 75% {
+    -o-transform: translateZ(195px) rotateX(-20deg) rotateY(10deg) rotateZ(-10deg);
+    background-color: rgb(60,97,125);
+  }
+  37.5% {
+    -o-transform: translateZ(0) rotateX(0) rotateY(0);
+    background-color: rgb(107,178,205);
+  }
+  50% {
+    -o-transform: translateZ(195px) rotateX(20deg) rotateY(-10deg) rotateZ(5deg);
+    background-color: rgb(107,178,205);
+  }
+  87.5% {
+    -o-transform: translateZ(0) rotateX(0) rotateY(0);
+    background-color: rgb(30,63,87);
+  }
+}
+
+@-ms-keyframes cssload-squaremini {
+  0%, 100% {
+    -ms-transform: translateZ(195px) rotateX(20deg) rotateY(-10deg) rotateZ(10deg);
+    background-color: rgb(30,63,87);
+  }
+  12.5%, 62.5% {
+    -ms-transform: translateZ(0) rotateX(0) rotateY(0);
+    background-color: rgb(60,97,125);
+  }
+  25%, 75% {
+    -ms-transform: translateZ(195px) rotateX(-20deg) rotateY(10deg) rotateZ(-10deg);
+    background-color: rgb(60,97,125);
+  }
+  37.5% {
+    -ms-transform: translateZ(0) rotateX(0) rotateY(0);
+    background-color: rgb(107,178,205);
+  }
+  50% {
+    -ms-transform: translateZ(195px) rotateX(20deg) rotateY(-10deg) rotateZ(5deg);
+    background-color: rgb(107,178,205);
+  }
+  87.5% {
+    -ms-transform: translateZ(0) rotateX(0) rotateY(0);
+    background-color: rgb(30,63,87);
+  }
+}
+
+@-webkit-keyframes cssload-squaremini {
+  0%, 100% {
+    -webkit-transform: translateZ(195px) rotateX(20deg) rotateY(-10deg) rotateZ(10deg);
+    background-color: rgb(30,63,87);
+  }
+  12.5%, 62.5% {
+    -webkit-transform: translateZ(0) rotateX(0) rotateY(0);
+    background-color: rgb(60,97,125);
+  }
+  25%, 75% {
+    -webkit-transform: translateZ(195px) rotateX(-20deg) rotateY(10deg) rotateZ(-10deg);
+    background-color: rgb(60,97,125);
+  }
+  37.5% {
+    -webkit-transform: translateZ(0) rotateX(0) rotateY(0);
+    background-color: rgb(107,178,205);
+  }
+  50% {
+    -webkit-transform: translateZ(195px) rotateX(20deg) rotateY(-10deg) rotateZ(5deg);
+    background-color: rgb(107,178,205);
+  }
+  87.5% {
+    -webkit-transform: translateZ(0) rotateX(0) rotateY(0);
+    background-color: rgb(30,63,87);
+  }
+}
+
+@-moz-keyframes cssload-squaremini {
+  0%, 100% {
+    -moz-transform: translateZ(195px) rotateX(20deg) rotateY(-10deg) rotateZ(10deg);
+    background-color: rgb(30,63,87);
+  }
+  12.5%, 62.5% {
+    -moz-transform: translateZ(0) rotateX(0) rotateY(0);
+    background-color: rgb(60,97,125);
+  }
+  25%, 75% {
+    -moz-transform: translateZ(195px) rotateX(-20deg) rotateY(10deg) rotateZ(-10deg);
+    background-color: rgb(60,97,125);
+  }
+  37.5% {
+    -moz-transform: translateZ(0) rotateX(0) rotateY(0);
+    background-color: rgb(107,178,205);
+  }
+  50% {
+    -moz-transform: translateZ(195px) rotateX(20deg) rotateY(-10deg) rotateZ(5deg);
+    background-color: rgb(107,178,205);
+  }
+  87.5% {
+    -moz-transform: translateZ(0) rotateX(0) rotateY(0);
+    background-color: rgb(30,63,87);
+  }
+}
