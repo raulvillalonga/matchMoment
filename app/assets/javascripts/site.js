@@ -52,24 +52,44 @@
 function loadData() {
  event.preventDefault();
 
-    var users_shown = $('.users_shown');
+    var users_shown = $('.usu-name');
 
     if (users_shown.length > 0) {
-      ajax.execute('/api/media/' + users_shown[0].innerHTML, getData);
+      ajax.execute('/api/media/' + users_shown[0].dataset.user, getData);
       if (users_shown.length > 1) {
         for (var i = 1; i < users_shown.length; i++) {
-          ajax.execute('/api/media/' + users_shown[i].innerHTML, getData);
+          ajax.execute('/api/media/' + users_shown[i].dataset.user, getData);
         }
       }
     }    
   }
 
+function loadColors() {
+ event.preventDefault();
+
+    var users_colors = $('.redondo');
+
+
+        for (var i = 0; i < users_colors.length; i++) {
+
+          $('.redondo')[i].dataset.user.css('border-color', 'red');
+          
+        }
+      
+        
+}
+
+
   $( document ).ready(function() {
       loadData();
       setTimeout(drawPhotoMatch, 1000);
+      //loadColors();
       
       
   });
+
+
+
 
 
 })();

@@ -46,12 +46,12 @@ header{
 }
 
 .usu-name{
-  margin:0px, 40px, 0px, 40px;
-  float: left;
-  text-align: center;
-  font-size: 24px;
-  width: 240px;
-  height: 160px;
+    text-align: center;
+    font-size: 24px;
+    width: 240px;
+    height: 160px;
+    display: inline-block;
+    vertical-align: top;
 }
 
 #map {
@@ -70,7 +70,7 @@ header{
 }
 
 .redondo{
-  border: 2px solid #3F6E98;
+  border: 6px solid #3F6E98;
   border-radius: 50px;
   overflow: hidden;
 }
@@ -119,7 +119,9 @@ width: 33px;
 }
 
 .usuarios{
-  margin-left: 100px;
+  display: block;
+  text-align: center
+
 }
 
 .boton{
@@ -170,3 +172,76 @@ width: 33px;
 .js-modal-header{
   height: 50px;
 }
+
+.usu-name a:hover {
+  color: red;
+}
+
+
+.usuarios {
+
+  .usu-name{
+
+    &:nth-child(10n+1) {
+      .redondo {
+        border-color: red;
+      }
+    }
+
+    &:nth-child(10n+2) {
+      .redondo {
+        border-color: blue;
+      }
+    }
+
+    &:nth-child(10n+3) {
+      .redondo {
+        border-color: orange;
+      }
+    }
+
+    &:nth-child(10n+4) {
+      .redondo {
+        border-color: green;
+      }
+    }
+
+    &:nth-child(10n+5) {
+      .redondo {
+        border-color: yellow;
+      }
+    }
+
+    &:nth-child(10n+6) {
+      .redondo {
+        border-color: indigo;
+      }
+    }
+
+    &:nth-child(10n+7) {
+      .redondo {
+        border-color: fuchsia;
+      }
+    }
+
+    &:nth-child(10n+8) {
+      .redondo {
+        border-color: maroon;
+      }
+    }
+
+    &:nth-child(10n+9) {
+      .redondo {
+        border-color: gray;
+      }
+    }
+
+    &:nth-child(10n+10) {
+      .redondo {
+        border-color: black;
+      }
+    }
+  }
+}
+
+
