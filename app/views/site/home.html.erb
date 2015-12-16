@@ -1,8 +1,12 @@
 <%= javascript_include_tag 'ajax' %>
 <%= javascript_include_tag 'site' %>
 
-  <h1>Compara las siguientes cuentas:</h1>
 
+  <div class="row">
+    <div class="col-md-12 titulo">
+      <h1>Compara las siguientes cuentas:</h1>      
+    </div>
+  </div>
 
 
   <%= form_for :usuarios, html: { class: "form-group" }, url: { action: "match" }  do |f| %>
@@ -28,7 +32,7 @@
     
     <div class="js-add-textbox"></div>
 
-    <div class="row js-txbox-line">
+    <div class="row js-txbox-line final-form">
       <div class="col-md-3"></div>
       <div class="col-md-6">
         <%= f.submit "COMPARAR", class:'js-submit btn btn-primary' %>
