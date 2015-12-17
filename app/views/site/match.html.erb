@@ -6,7 +6,7 @@
 
 <div class='row'>
   <div class='col-md-12 titulo'>
-    <h1>Comparando los usuarios: </h1>
+    <h1>Comparing users: </h1>
   </div>
 </div>
 
@@ -17,7 +17,7 @@
       <% if (usu[:id] != nil) %>
         <div class='usu-name' data-user="<%= usu[:id] %>"><a href='<%= usu[:website] %>' target="_blank"><img src='<%= usu[:profilepicture] %>' class="redondo" data-color="<%= usu[:id] %>" height='100px'></a><br><%= usu[:username] %></div>
       <% else %>
-        <div class='usu-name'>El usuario <%= usu[:username] %> no existe.</div>
+        <div class='usu-name'>User <%= usu[:username] %> not exists.</div>
       <% end %>
     <% end %>
     </div>
@@ -27,17 +27,17 @@
 <div class='row links'>    
     <a href="/">
       <div class='col-md-4 boton js-drawMatchMarkers'>
-        Coincidencias
+        Coincidences
       </div>
     </a>
     <a href="/">
       <div class='col-md-4 boton js-drawAllMarkers'>
-        Todas 
+        All 
       </div>
     </a>  
     <a href="/">  
       <div class='col-md-4 boton js-drawCircles'>
-        Densidad
+        Mapping
       </div>
     </a>  
 </div>
@@ -47,9 +47,9 @@
       <div class="one-slide">
         <div class="text-slide">
           <p>
-            <label for="js-radio-box1">Fotografias en un radio de </label>
+            <label for="js-radio-box1">Pictures within a </label>
             <input type="text" class="js-radio-box" id="js-radio-box1" readonly>
-            <label for="js-radio-box1"> metros a la redonda. </label>
+            <label for="js-radio-box1"> meter radius. </label>
           </p>
         </div>
         <div id="slider1"></div>   
@@ -59,9 +59,9 @@
       <div class="one-slide">
         <div class="text-slide">  
           <p>
-            <label for="js-radio-box2">Fotografias con </label>
+            <label for="js-radio-box2">Photo </label>
             <input type="text" class="js-radio-box" id="js-radio-box2" readonly>
-            <label for="js-radio-box2"> dias de diferencia</label>            
+            <label for="js-radio-box2"> days apart.</label>            
           </p>
         </div>
         <div id="slider2"></div>
@@ -74,16 +74,16 @@
 </div>
 
 <div class='row row-coincidencias'>
-<h1>Curiosidades</h1>
+<h1>Fun facts:</h1>
   <ul>    
     <li>
-      <h2 class="frase-time">Hay una foto en el mismo sitio, con una diferencia minima de 2 dias.</h2>
+      <h2 class="frase-time">There is a picture taken at the same place about 2 days apart.</h2>
     </li>
     <li>
-      <h2 class="frase-radio">La distancia minima entre dos fotos es de 48 metros.</h2>
+      <h2 class="frase-radio">The minimum distance between two pictures is 48 meters.</h2>
     </li>    
     <li>
-      <h2 class="frase-radio-time">Se izieron unas fotos a 10 metros, en 3 dias de diferencia.</h2>
+      <h2 class="frase-radio-time">Pictures were taken with a distance of 10 meters, and 3 days apart.</h2>
     </li>       
   </ul>
 </div>

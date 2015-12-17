@@ -94,13 +94,13 @@
 
   function radioMin(radio){
 
-    $(".frase-radio").text('La distancia minima entre dos fotos es de ' + Math.round(radio) + ' metros.');    
+    $(".frase-radio").text('The minimum distance between two pictures is ' + Math.round(radio) + ' meters.');    
   }
 
   function timeMin(time){
-    $(".frase-time").text('Hay una foto en el mismo sitio, con una diferencia minima de ' + time + ' dias.');
+    $(".frase-time").text('There is a picture taken at the same place about ' + time + ' days apart.');
   }
 
   function radioTimeMin(radio, time){
-    $(".frase-radio-time").text('Se izieron unas fotos a ' + Math.round(radio) + ' metros, en ' + time + ' dias.');
+    $(".frase-radio-time").text('Pictures were taken with a distance of ' + Math.round(radio) + ' meters, and ' + time + ' days apart.');
   }

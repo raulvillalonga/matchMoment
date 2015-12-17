@@ -26,8 +26,6 @@ function createMap(position){
 
   map = new google.maps.Map($('#map')[0], mapOptions);
 
-  //createMarker(position);
-
 }
 
 function createMarker(data) {
