@@ -19,6 +19,10 @@
   function getArrMatch(arr, radio, tiempo) {
 
     if (arr.length > 1) {
+      var rMin = 1000;
+      var tMin = 365;
+      var raMin = 1000;
+      var tiMin = 365;
       var arr_final = [];
       var arr_temp = [];
       var arr_obj = [];
@@ -34,6 +38,15 @@
                 
                 var d1 = arr[n][m]['created_time'];
                 var d2 = arr[0][i]['created_time'];
+
+                if (rMin > arr_obj[1]) { rMin = arr_obj[1]};
+                if (tMin > convertToDay(d1, d2)) {tMin = convertToDay(d1, d2)};
+                if ((raMin > arr_obj[1]) && (tiMin > convertToDay(d1, d2))) {
+                  raMin = arr_obj[1];
+                  tiMin = convertToDay(d1, d2);
+                };
+
+
                 if ((arr_obj[1] < radio)&&(tiempo > convertToDay(d1, d2))){
                   if (arr_obj[1] < 5) {
                     arr_obj[0]['longitude'] = arr_obj[0]['longitude'] + 0.0002
@@ -48,6 +61,11 @@
       arr_final.push(arr_temp);
       arr_temp = [];  
       }
+
+    radioMin(rMin);
+    timeMin(tMin);
+    radioTimeMin(raMin, tiMin); 
+
     return arr_final;  
     } 
     else {
@@ -56,7 +74,7 @@
   }
 
   function convertToDay(date1, date2) {
-    debugger;
+
     var days = 0;
 
     date1 = date1.split('-');
@@ -71,4 +89,18 @@
     days = Math.abs(days);
 
     return days;
+  }
+
+
+  function radioMin(radio){
+
+    $(".frase-radio").text('La distancia minima entre dos fotos es de ' + Math.round(radio) + ' metros.');    
+  }
+
+  function timeMin(time){
+    $(".frase-time").text('Hay una foto en el mismo sitio, con una diferencia minima de ' + time + ' dias.');
+  }
+
+  function radioTimeMin(radio, time){
+    $(".frase-radio-time").text('Se izieron unas fotos a ' + Math.round(radio) + ' metros, en ' + time + ' dias.');
   }
